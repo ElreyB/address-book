@@ -3,6 +3,9 @@ function Contact(first, last) {
   this.lastName = last;
 }
 
+Contact.prototype.fullName = function() {
+  return this.firstName + " " + this.lastName;
+}
 
 $(document).ready(function() {
   $("form#new-contact").submit(function(event) {
@@ -23,6 +26,6 @@ $(document).ready(function() {
       $("#show-contact h2").text(newContact.firstName);
       $(".first-name").text(newContact.firstName);
       $(".last-name").text(newContact.lastName);
-    });  
+    });
   });
 });
